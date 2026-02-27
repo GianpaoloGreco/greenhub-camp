@@ -9,18 +9,16 @@
         :root {
             --dark: #080f0b;
             --dark-2: #0a1a12;
-            --dark-3: #0d2418;
             --green: #7CFC00;
-            --green-dim: rgba(124, 252, 0, 0.15);
-            --green-glow: rgba(124, 252, 0, 0.08);
-            --pink: #DDA0DD;
+            --green-dim: rgba(124, 252, 0, 0.12);
+            --green-glow: rgba(124, 252, 0, 0.06);
             --white: #f0f0f0;
             --gray: #8a9a90;
+            --gray-light: #b0bfb6;
             --radius: 12px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
 
         body {
@@ -31,597 +29,359 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ---- NAV ---- */
+        /* NAV */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: fixed; top: 0; width: 100%;
+            padding: 22px 60px;
+            display: flex; justify-content: space-between; align-items: center;
             z-index: 100;
             background: rgba(8, 15, 11, 0.85);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(124, 252, 0, 0.1);
+            border-bottom: 1px solid rgba(124, 252, 0, 0.08);
         }
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            color: var(--green);
-        }
-
+        .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: 2px; color: var(--green); }
         .logo span { color: var(--white); font-weight: 400; }
 
         nav a.cta-nav {
-            color: var(--dark);
-            background: var(--green);
-            padding: 10px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
+            color: var(--dark); background: var(--green);
+            padding: 10px 28px; border-radius: 8px;
+            text-decoration: none; font-weight: 600; font-size: 0.85rem;
             transition: all 0.3s;
         }
+        nav a.cta-nav:hover { box-shadow: 0 0 25px rgba(124, 252, 0, 0.4); }
 
-        nav a.cta-nav:hover { box-shadow: 0 0 25px rgba(124, 252, 0, 0.4); transform: translateY(-1px); }
-
-        /* ---- SECTIONS ---- */
-        section { padding: 120px 60px; max-width: 1200px; margin: 0 auto; }
+        /* SECTIONS */
+        section { padding: 140px 60px; max-width: 1200px; margin: 0 auto; }
 
         .section-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--green);
-            margin-bottom: 20px;
-            opacity: 0.8;
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 4px;
+            text-transform: uppercase; color: var(--green);
+            margin-bottom: 24px; opacity: 0.7;
         }
 
         h1 {
-            font-size: clamp(2.8rem, 6vw, 4.5rem);
-            font-weight: 900;
-            line-height: 1.05;
-            letter-spacing: -1px;
-            margin-bottom: 24px;
+            font-size: clamp(3.2rem, 7vw, 5.5rem);
+            font-weight: 900; line-height: 1.02; letter-spacing: -2px;
+            margin-bottom: 32px;
         }
-
         h1 .accent { color: var(--green); }
 
         h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 800; line-height: 1.08; letter-spacing: -1px;
+            margin-bottom: 24px;
         }
-
         h2 .accent { color: var(--green); }
 
         .subtitle {
-            font-size: 1.15rem;
-            color: var(--gray);
-            max-width: 520px;
-            line-height: 1.7;
+            font-size: 1.25rem; color: var(--gray-light);
+            max-width: 560px; line-height: 1.75;
         }
 
-        /* ---- HERO ---- */
+        /* HERO */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-top: 100px;
-            position: relative;
+            min-height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; padding-top: 100px; position: relative;
         }
-
         .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -200px;
-            width: 600px;
-            height: 600px;
+            content: ''; position: absolute; top: -100px; right: -300px;
+            width: 800px; height: 800px;
             background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%);
             pointer-events: none;
         }
 
-        .hero-badges {
-            display: flex;
-            gap: 12px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .hero-badge {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--dark-2);
-            border: 1px solid rgba(124, 252, 0, 0.15);
-            padding: 8px 16px;
-            border-radius: 100px;
-            font-size: 0.8rem;
-            color: var(--gray);
-        }
-
-        .hero-badge strong { color: var(--green); }
-
-        .hero-ctas {
-            display: flex;
-            gap: 16px;
-            margin-top: 48px;
-            flex-wrap: wrap;
-        }
+        .hero-ctas { display: flex; gap: 16px; margin-top: 56px; flex-wrap: wrap; }
 
         .btn-primary {
-            display: inline-block;
-            background: var(--green);
-            color: var(--dark);
-            padding: 16px 36px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
+            display: inline-block; background: var(--green); color: var(--dark);
+            padding: 18px 40px; border-radius: 10px; text-decoration: none;
+            font-weight: 700; font-size: 1rem; transition: all 0.3s;
+            border: none; cursor: pointer;
         }
-
-        .btn-primary:hover { box-shadow: 0 0 40px rgba(124, 252, 0, 0.35); transform: translateY(-2px); }
+        .btn-primary:hover { box-shadow: 0 0 40px rgba(124, 252, 0, 0.3); transform: translateY(-2px); }
 
         .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--green);
-            padding: 16px 36px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: 1px solid rgba(124, 252, 0, 0.3);
-            transition: all 0.3s;
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--green); padding: 18px 40px; border-radius: 10px;
+            text-decoration: none; font-weight: 600; font-size: 1rem;
+            border: 1px solid rgba(124, 252, 0, 0.25); transition: all 0.3s;
             background: transparent;
         }
-
         .btn-secondary:hover { background: var(--green-dim); border-color: var(--green); }
 
-        /* ---- TRUST BAR ---- */
-        .trust-bar {
-            padding: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
+        /* LOGOS BAR */
+        .logos-bar {
+            padding: 80px 60px;
+            max-width: 1200px; margin: 0 auto;
         }
 
-        .trust-bar p {
-            font-size: 0.8rem;
-            color: var(--gray);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
+        .logos-bar p {
+            font-size: 0.7rem; color: var(--gray); letter-spacing: 3px;
+            text-transform: uppercase; margin-bottom: 40px;
         }
 
-        .trust-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
-            opacity: 0.6;
+        .logos-grid {
+            display: flex; flex-wrap: wrap;
+            gap: 0;
         }
 
-        .trust-logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--gray);
-            letter-spacing: 1px;
+        .logo-item {
+            flex: 0 0 16.666%;
+            height: 80px;
+            display: flex; align-items: center; justify-content: center;
+            border: 1px solid rgba(124, 252, 0, 0.05);
+            font-size: 0.85rem; font-weight: 600; letter-spacing: 1px;
+            color: var(--gray); opacity: 0.5;
+            transition: opacity 0.3s;
         }
+        .logo-item:hover { opacity: 0.9; }
 
-        /* ---- COME FUNZIONA ---- */
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-top: 60px;
-        }
+        /* STEPS */
+        .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 80px; }
 
         .step {
-            padding: 32px 24px;
+            padding: 40px 28px;
             background: var(--dark-2);
-            border: 1px solid rgba(124, 252, 0, 0.08);
-            border-radius: var(--radius);
-            transition: all 0.3s;
-            position: relative;
+            transition: all 0.3s; position: relative;
         }
-
-        .step:hover { border-color: rgba(124, 252, 0, 0.25); transform: translateY(-4px); }
+        .step:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+        .step:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
 
         .step-num {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--green);
-            opacity: 0.2;
-            line-height: 1;
-            margin-bottom: 16px;
+            font-size: 4rem; font-weight: 900; color: var(--green);
+            opacity: 0.12; line-height: 1; margin-bottom: 20px;
         }
 
-        .step h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--white);
-        }
+        .step h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 12px; color: var(--white); }
+        .step p { font-size: 0.95rem; color: var(--gray); line-height: 1.7; }
 
-        .step p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
-
-        /* ---- BENEFICI ---- */
-        .benefits {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 60px;
-        }
+        /* BENEFICI */
+        .benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 80px; }
 
         .benefit {
-            padding: 28px;
-            border: 1px solid rgba(124, 252, 0, 0.08);
-            border-radius: var(--radius);
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
+            padding: 40px;
+            border: 1px solid rgba(124, 252, 0, 0.05);
             transition: all 0.3s;
         }
+        .benefit:hover { background: var(--dark-2); }
 
-        .benefit:hover { border-color: rgba(124, 252, 0, 0.2); background: var(--dark-2); }
-
-        .benefit-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--green-dim);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 1.1rem;
+        .benefit-line {
+            width: 32px; height: 2px; background: var(--green);
+            margin-bottom: 20px;
         }
 
-        .benefit h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
-        .benefit p { font-size: 0.85rem; color: var(--gray); }
+        .benefit h4 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+        .benefit p { font-size: 0.95rem; color: var(--gray); line-height: 1.7; }
 
-        /* ---- PRICING ---- */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 60px;
-        }
+        /* PRICING */
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 80px; }
 
         .pricing-card {
             background: var(--dark-2);
-            border: 1px solid rgba(124, 252, 0, 0.08);
-            border-radius: var(--radius);
-            padding: 36px 28px;
-            transition: all 0.3s;
-            position: relative;
+            padding: 44px 32px; transition: all 0.3s; position: relative;
         }
-
-        .pricing-card:hover { border-color: rgba(124, 252, 0, 0.2); }
+        .pricing-card:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+        .pricing-card:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
 
         .pricing-card.featured {
-            border-color: var(--green);
-            background: linear-gradient(180deg, rgba(124, 252, 0, 0.06) 0%, var(--dark-2) 100%);
+            background: linear-gradient(180deg, rgba(124, 252, 0, 0.05) 0%, var(--dark-2) 100%);
         }
-
         .pricing-card.featured::before {
-            content: 'Consigliato';
-            position: absolute;
-            top: -12px;
-            left: 28px;
-            background: var(--green);
-            color: var(--dark);
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 4px 14px;
-            border-radius: 100px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            content: 'Consigliato'; position: absolute; top: -12px; left: 32px;
+            background: var(--green); color: var(--dark);
+            font-size: 0.65rem; font-weight: 700; padding: 4px 14px;
+            border-radius: 100px; text-transform: uppercase; letter-spacing: 1px;
         }
 
         .pricing-tier {
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--green);
-            margin-bottom: 16px;
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 3px;
+            text-transform: uppercase; color: var(--green); margin-bottom: 20px;
         }
 
-        .pricing-price {
-            font-size: 2.8rem;
-            font-weight: 900;
-            margin-bottom: 4px;
-        }
-
-        .pricing-price span { font-size: 0.9rem; font-weight: 400; color: var(--gray); }
+        .pricing-price { font-size: 3.2rem; font-weight: 900; margin-bottom: 6px; }
+        .pricing-price span { font-size: 1rem; font-weight: 400; color: var(--gray); }
 
         .pricing-desc {
-            font-size: 0.85rem;
-            color: var(--gray);
-            margin-bottom: 24px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.95rem; color: var(--gray); margin-bottom: 32px;
+            padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .pricing-features { list-style: none; }
-
         .pricing-features li {
-            font-size: 0.85rem;
-            padding: 8px 0;
-            color: var(--gray);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-size: 0.95rem; padding: 10px 0; color: var(--gray);
+            display: flex; align-items: center; gap: 12px;
         }
-
         .pricing-features li::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background: var(--green);
-            border-radius: 50%;
-            flex-shrink: 0;
+            content: ''; width: 5px; height: 5px;
+            background: var(--green); border-radius: 50%; flex-shrink: 0;
         }
-
-        .pricing-features li.bonus { color: var(--green); font-weight: 500; }
-        .pricing-features li.bonus::before { background: var(--pink); }
+        .pricing-features li.highlight { color: var(--green); font-weight: 500; }
 
         .pricing-note {
-            margin-top: 40px;
-            padding: 20px 24px;
-            background: var(--dark-2);
-            border-left: 3px solid var(--green);
+            margin-top: 48px; padding: 24px 28px;
+            background: var(--dark-2); border-left: 2px solid var(--green);
             border-radius: 0 var(--radius) var(--radius) 0;
-            font-size: 0.9rem;
-            color: var(--gray);
+            font-size: 1rem; color: var(--gray);
         }
-
         .pricing-note strong { color: var(--green); }
 
-        /* ---- CASE STUDIES ---- */
-        .cases {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-top: 60px;
+        /* CASES */
+        .cases { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 80px; }
+
+        .case-card { background: var(--dark-2); padding: 44px; transition: all 0.3s; }
+        .case-card:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+        .case-card:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+
+        .case-card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; }
+        .case-card .case-sector {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 3px;
+            text-transform: uppercase; color: var(--green); margin-bottom: 16px;
         }
+        .case-card > p { font-size: 0.95rem; color: var(--gray); line-height: 1.7; margin-bottom: 28px; }
 
-        .case-card {
-            background: var(--dark-2);
-            border: 1px solid rgba(124, 252, 0, 0.08);
-            border-radius: var(--radius);
-            padding: 32px;
-            transition: all 0.3s;
-        }
+        .case-stat { display: flex; gap: 32px; }
+        .case-stat div { }
+        .case-stat .num { font-size: 1.8rem; font-weight: 800; color: var(--green); line-height: 1; }
+        .case-stat .label { font-size: 0.75rem; color: var(--gray); margin-top: 4px; }
 
-        .case-card:hover { border-color: rgba(124, 252, 0, 0.2); }
-
-        .case-tag {
-            display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--green);
-            background: var(--green-dim);
-            padding: 4px 12px;
-            border-radius: 100px;
-            margin-bottom: 16px;
-        }
-
-        .case-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
-        .case-card > p { font-size: 0.9rem; color: var(--gray); margin-bottom: 20px; }
-
-        .case-stat {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .case-stat div { flex: 1; min-width: 100px; }
-        .case-stat .num { font-size: 1.5rem; font-weight: 800; color: var(--green); }
-        .case-stat .label { font-size: 0.75rem; color: var(--gray); }
-
-        /* ---- CONTATTO ---- */
-        .contact-section {
-            padding: 120px 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        /* CONTATTO */
+        .contact-section { padding: 140px 60px; max-width: 1200px; margin: 0 auto; }
 
         .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: start;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 100px; align-items: start;
         }
 
         .contact-form {
             background: var(--dark-2);
-            border: 1px solid rgba(124, 252, 0, 0.1);
-            border-radius: var(--radius);
-            padding: 40px;
+            border: 1px solid rgba(124, 252, 0, 0.08);
+            border-radius: var(--radius); padding: 44px;
         }
 
-        .form-group { margin-bottom: 20px; }
-
+        .form-group { margin-bottom: 24px; }
         .form-group label {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--gray);
-            margin-bottom: 8px;
+            display: block; font-size: 0.8rem; font-weight: 500;
+            color: var(--gray); margin-bottom: 8px;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
-            width: 100%;
-            padding: 14px 16px;
-            background: var(--dark);
-            border: 1px solid rgba(124, 252, 0, 0.12);
-            border-radius: 8px;
-            color: var(--white);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            transition: border-color 0.3s;
-            outline: none;
+            width: 100%; padding: 16px 18px;
+            background: var(--dark); border: 1px solid rgba(124, 252, 0, 0.1);
+            border-radius: 8px; color: var(--white);
+            font-family: 'Inter', sans-serif; font-size: 0.95rem;
+            transition: border-color 0.3s; outline: none;
         }
-
         .form-group input:focus,
         .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--green);
-        }
+        .form-group textarea:focus { border-color: var(--green); }
 
         .form-group textarea { resize: vertical; min-height: 100px; }
-
         .form-group select { appearance: none; cursor: pointer; }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-submit { width: 100%; margin-top: 8px; font-size: 1rem; }
 
-        .form-submit {
-            width: 100%;
-            margin-top: 8px;
-        }
-
-        .form-note {
-            font-size: 0.75rem;
-            color: var(--gray);
-            margin-top: 16px;
-            opacity: 0.7;
-        }
+        .form-note { font-size: 0.8rem; color: var(--gray); margin-top: 16px; opacity: 0.6; }
 
         .contact-info h2 { margin-bottom: 16px; }
 
-        .contact-perks {
-            list-style: none;
-            margin-top: 40px;
-        }
-
+        .contact-perks { list-style: none; margin-top: 48px; }
         .contact-perks li {
-            padding: 16px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            font-size: 0.9rem;
-            color: var(--gray);
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 1rem; color: var(--gray-light);
+            display: flex; align-items: center; gap: 14px;
+        }
+        .contact-perks li .dot {
+            width: 6px; height: 6px; background: var(--green);
+            border-radius: 50%; flex-shrink: 0;
         }
 
-        .contact-perks li .perk-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--green);
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        /* ---- FOOTER ---- */
+        /* FOOTER */
         footer {
-            padding: 40px 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
-            color: var(--gray);
+            padding: 40px 60px; max-width: 1200px; margin: 0 auto;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.8rem; color: var(--gray);
         }
 
-        /* ---- DIVIDER ---- */
-        .divider {
-            max-width: 1200px;
-            margin: 0 auto;
-            height: 1px;
-            background: rgba(124, 252, 0, 0.08);
-        }
+        /* DIVIDER */
+        .divider { max-width: 1200px; margin: 0 auto; height: 1px; background: rgba(124, 252, 0, 0.06); }
 
-        /* ---- SCROLL ANIMATIONS ---- */
+        /* ANIMATIONS */
         .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ---- RESPONSIVE ---- */
+        /* RESPONSIVE */
         @media (max-width: 900px) {
             nav { padding: 16px 24px; }
-            section, .contact-section, .trust-bar { padding: 80px 24px; }
+            section, .contact-section, .logos-bar { padding: 80px 24px; }
             footer { padding: 30px 24px; flex-direction: column; gap: 10px; }
-
             .steps { grid-template-columns: 1fr 1fr; }
+            .step:first-child { border-radius: var(--radius) 0 0 0; }
+            .step:nth-child(2) { border-radius: 0 var(--radius) 0 0; }
+            .step:nth-child(3) { border-radius: 0 0 0 var(--radius); }
+            .step:last-child { border-radius: 0 0 var(--radius) 0; }
             .benefits { grid-template-columns: 1fr; }
-            .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+            .pricing-card, .pricing-card:first-child, .pricing-card:last-child { border-radius: var(--radius); }
             .cases { grid-template-columns: 1fr; }
+            .case-card, .case-card:first-child, .case-card:last-child { border-radius: var(--radius); }
             .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
+            .logo-item { flex: 0 0 33.333%; }
         }
 
         @media (max-width: 600px) {
             .steps { grid-template-columns: 1fr; }
+            .step, .step:first-child, .step:last-child, .step:nth-child(2), .step:nth-child(3) { border-radius: var(--radius); }
             .form-row { grid-template-columns: 1fr; }
             .hero-ctas { flex-direction: column; }
             .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+            .logo-item { flex: 0 0 50%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAV -->
     <nav>
         <div class="logo">GREENHUB <span>CAMP</span></div>
-        <a href="#contatto" class="cta-nav">Richiedi Info</a>
+        <a href="#contatto" class="cta-nav">Contattaci</a>
     </nav>
 
     <!-- HERO -->
     <section class="hero" id="top">
-        <div class="section-label">Formazione + Talent Acquisition</div>
-        <h1>Trova talenti <span class="accent">già formati</span> sui tuoi temi.</h1>
+        <div class="section-label">Formazione &middot; Selezione &middot; Inserimento</div>
+        <h1>Talenti <span class="accent">già formati</span><br>sui tuoi temi.</h1>
         <p class="subtitle">
-            Organizziamo un camp brandizzato con il nome della tua azienda: selezioniamo i candidati, li formiamo e te li presentiamo pronti.
+            Organizziamo camp formativi brandizzati con il nome della tua azienda. Selezioniamo i candidati, li formiamo sulle tue esigenze e te li presentiamo pronti per il colloquio.
         </p>
-        <div class="hero-badges">
-            <div class="hero-badge"><strong>3+</strong> camp realizzati</div>
-            <div class="hero-badge"><strong>100%</strong> aziende soddisfatte</div>
-            <div class="hero-badge"><strong>5-8</strong> talenti garantiti</div>
-        </div>
         <div class="hero-ctas">
-            <a href="#contatto" class="btn-primary">Parliamone</a>
-            <a href="#come-funziona" class="btn-secondary">Scopri come funziona</a>
+            <a href="#contatto" class="btn-primary">Richiedi una call</a>
+            <a href="#come-funziona" class="btn-secondary">Come funziona</a>
         </div>
     </section>
 
-    <!-- TRUST BAR -->
-    <div class="trust-bar">
-        <p>Ci hanno già scelto</p>
-        <div class="trust-logos">
-            <div class="trust-logo">TEKLA</div>
-            <div class="trust-logo">RE ENERGY</div>
-            <div class="trust-logo">YOUBIQUO</div>
+    <!-- LOGHI AZIENDE -->
+    <div class="logos-bar">
+        <p>Aziende che hanno lavorato con noi</p>
+        <div class="logos-grid">
+            <div class="logo-item">TEKLA</div>
+            <div class="logo-item">RE ENERGY</div>
+            <div class="logo-item">YOUBIQUO</div>
+            <div class="logo-item">NETCOM</div>
+            <div class="logo-item">MEDAARCH</div>
+            <div class="logo-item">PROTOM</div>
+            <div class="logo-item">CAMPANIA NEWSTEEL</div>
+            <div class="logo-item">MATERIAS</div>
+            <div class="logo-item">GRADED</div>
+            <div class="logo-item">ALI SPA</div>
+            <div class="logo-item">DOLMEN</div>
+            <div class="logo-item">STMICROELECTRONICS</div>
         </div>
     </div>
 
@@ -629,30 +389,30 @@
 
     <!-- COME FUNZIONA -->
     <section id="come-funziona">
-        <div class="section-label">Come funziona</div>
-        <h2>Dal tuo bisogno <span class="accent">al talento giusto</span>, in 4 step.</h2>
-        <p class="subtitle">Pensiamo a tutto noi. Tu ci dici chi cerchi, noi organizziamo il camp e ti presentiamo i migliori.</p>
+        <div class="section-label">Il processo</div>
+        <h2>Dal profilo che cerchi <span class="accent">al candidato pronto.</span></h2>
+        <p class="subtitle">Ci occupiamo di tutto: dalla progettazione del camp alla selezione finale dei talenti.</p>
 
         <div class="steps">
             <div class="step fade-up">
                 <div class="step-num">01</div>
-                <h3>Definisci il profilo</h3>
-                <p>Ci racconti chi stai cercando: competenze, ruolo, settore. Costruiamo il camp su misura.</p>
+                <h3>Profilo</h3>
+                <p>Definisci con noi il profilo che stai cercando. Costruiamo il percorso formativo sulle tue esigenze.</p>
             </div>
             <div class="step fade-up">
                 <div class="step-num">02</div>
-                <h3>Lanciamo il camp</h3>
-                <p>Camp brandizzato con il tuo nome. Video, brochure, promozione sui nostri canali. Selezioniamo i partecipanti.</p>
+                <h3>Camp</h3>
+                <p>Lanciamo un camp brandizzato con il tuo nome. Video, brochure e promozione sui nostri canali.</p>
             </div>
             <div class="step fade-up">
                 <div class="step-num">03</div>
                 <h3>Formazione</h3>
-                <p>Docente con competenze verticali ed esperienza sul campo. Incontri pratici sui tuoi temi specifici.</p>
+                <p>Docente con competenze verticali ed esperienza lavorativa sul campo. Incontri pratici e mirati.</p>
             </div>
             <div class="step fade-up">
                 <div class="step-num">04</div>
                 <h3>Matching</h3>
-                <p>Ti presentiamo i migliori candidati. Li hai già visti in azione durante il camp. Colloqui diretti e assunzione.</p>
+                <p>Ti presentiamo i candidati migliori. Li hai visti in azione durante il camp. Colloqui diretti.</p>
             </div>
         </div>
     </section>
@@ -661,36 +421,36 @@
 
     <!-- BENEFICI -->
     <section id="benefici">
-        <div class="section-label">Perché sceglierci</div>
-        <h2>Meno costi. <span class="accent">Più valore.</span></h2>
+        <div class="section-label">Vantaggi</div>
+        <h2>Perché le aziende <span class="accent">ci scelgono.</span></h2>
 
         <div class="benefits">
             <div class="benefit fade-up">
-                <div class="benefit-icon">&#9889;</div>
                 <div>
+                    <div class="benefit-line"></div>
                     <h4>Candidati pre-formati</h4>
-                    <p>I talenti arrivano al colloquio già preparati sui tuoi temi specifici.</p>
+                    <p>I talenti arrivano al colloquio già preparati sui tuoi temi specifici. Riduci tempi e costi di selezione.</p>
                 </div>
             </div>
             <div class="benefit fade-up">
-                <div class="benefit-icon">&#127918;</div>
                 <div>
+                    <div class="benefit-line"></div>
                     <h4>Employer branding incluso</h4>
-                    <p>Video, post social, visibilità come azienda sostenibile. ~1.000€ di valore marketing incluso.</p>
+                    <p>Video, contenuti social e visibilità come azienda sostenibile. Valore marketing incluso nel pacchetto.</p>
                 </div>
             </div>
             <div class="benefit fade-up">
-                <div class="benefit-icon">&#128170;</div>
                 <div>
-                    <h4>Zero rischio</h4>
-                    <p>Li conosci durante il camp prima di decidere. Puoi partecipare agli incontri.</p>
+                    <div class="benefit-line"></div>
+                    <h4>Valutazione sul campo</h4>
+                    <p>Conosci i candidati durante il camp prima di decidere. Puoi partecipare agli incontri formativi.</p>
                 </div>
             </div>
             <div class="benefit fade-up">
-                <div class="benefit-icon">&#127793;</div>
                 <div>
-                    <h4>Bonus: Piattaforma ESG</h4>
-                    <p>6 mesi gratuiti di accesso alla piattaforma di sostenibilità Green Hub.</p>
+                    <div class="benefit-line"></div>
+                    <h4>Piattaforma ESG inclusa</h4>
+                    <p>6 mesi di accesso gratuito alla piattaforma di sostenibilità Green Hub per la tua azienda.</p>
                 </div>
             </div>
         </div>
@@ -700,22 +460,22 @@
 
     <!-- PRICING -->
     <section id="pricing">
-        <div class="section-label">Investimento</div>
-        <h2>Tre pacchetti, <span class="accent">un obiettivo.</span></h2>
-        <p class="subtitle">Prezzi calibrati sulla complessità del profilo che cerchi.</p>
+        <div class="section-label">Pacchetti</div>
+        <h2>Scegli in base <span class="accent">al profilo.</span></h2>
+        <p class="subtitle">Il prezzo dipende dalla complessità del profilo che stai cercando.</p>
 
         <div class="pricing-grid">
             <div class="pricing-card fade-up">
                 <div class="pricing-tier">Base</div>
                 <div class="pricing-price">2.500 <span>+IVA</span></div>
-                <div class="pricing-desc">Profili semplici e locali</div>
+                <div class="pricing-desc">Profili operativi e locali</div>
                 <ul class="pricing-features">
                     <li>2 incontri formativi</li>
                     <li>5 talenti garantiti</li>
                     <li>Docente con esperienza verticale</li>
-                    <li>Video + promozione social</li>
-                    <li class="bonus">6 mesi piattaforma ESG</li>
-                    <li class="bonus">Certificazione LinkedIn</li>
+                    <li>Video e promozione social</li>
+                    <li class="highlight">6 mesi piattaforma ESG</li>
+                    <li class="highlight">Certificazione LinkedIn</li>
                 </ul>
             </div>
 
@@ -727,9 +487,9 @@
                     <li>3 incontri + esercitazioni</li>
                     <li>5-8 talenti garantiti</li>
                     <li>Docente con esperienza verticale</li>
-                    <li>Video + promozione social</li>
-                    <li class="bonus">6 mesi piattaforma ESG</li>
-                    <li class="bonus">Certificazione LinkedIn</li>
+                    <li>Video e promozione social</li>
+                    <li class="highlight">6 mesi piattaforma ESG</li>
+                    <li class="highlight">Certificazione LinkedIn</li>
                 </ul>
             </div>
 
@@ -741,15 +501,15 @@
                     <li>4 incontri + esercitazioni</li>
                     <li>8+ talenti garantiti</li>
                     <li>Docente con esperienza verticale</li>
-                    <li>Video + promozione social</li>
-                    <li class="bonus">6 mesi piattaforma ESG</li>
-                    <li class="bonus">Certificazione LinkedIn</li>
+                    <li>Video e promozione social</li>
+                    <li class="highlight">6 mesi piattaforma ESG</li>
+                    <li class="highlight">Certificazione LinkedIn</li>
                 </ul>
             </div>
         </div>
 
         <div class="pricing-note fade-up">
-            <strong>Sconto docente interno:</strong> Se la tua azienda mette il proprio esperto come docente, il prezzo scende.
+            <strong>Docente interno?</strong> Se la tua azienda fornisce il docente, il prezzo si riduce.
         </div>
     </section>
 
@@ -757,14 +517,14 @@
 
     <!-- CASE STUDY -->
     <section id="risultati">
-        <div class="section-label">Risultati</div>
-        <h2>Chi l'ha già <span class="accent">fatto.</span></h2>
+        <div class="section-label">Casi reali</div>
+        <h2>Risultati <span class="accent">concreti.</span></h2>
 
         <div class="cases">
             <div class="case-card fade-up">
-                <div class="case-tag">Porte & Finestre</div>
+                <div class="case-sector">Manifattura &middot; Infissi</div>
                 <h3>Tekla</h3>
-                <p>Cercavano architetti e ingegneri per progettazione infissi. 5 incontri, 20 ore di formazione in sede a Sarno.</p>
+                <p>Cercavano architetti e ingegneri per la progettazione di infissi. Abbiamo organizzato 5 incontri formativi in sede a Sarno con docente specializzata.</p>
                 <div class="case-stat">
                     <div>
                         <div class="num">5</div>
@@ -774,17 +534,13 @@
                         <div class="num">20h</div>
                         <div class="label">Di formazione</div>
                     </div>
-                    <div>
-                        <div class="num">5</div>
-                        <div class="label">Incontri</div>
-                    </div>
                 </div>
             </div>
 
             <div class="case-card fade-up">
-                <div class="case-tag">Energie Rinnovabili</div>
+                <div class="case-sector">Energia &middot; Rinnovabili</div>
                 <h3>Re Energy</h3>
-                <p>Profili nel settore energie rinnovabili. Risultato: superato le aspettative con 10 talenti arrivati su 8 garantiti.</p>
+                <p>Profili nel settore delle energie rinnovabili. Risultato superiore alle aspettative: arrivati più talenti di quelli garantiti.</p>
                 <div class="case-stat">
                     <div>
                         <div class="num">10</div>
@@ -793,10 +549,6 @@
                     <div>
                         <div class="num">8</div>
                         <div class="label">Garantiti</div>
-                    </div>
-                    <div>
-                        <div class="num">+25%</div>
-                        <div class="label">Sopra le attese</div>
                     </div>
                 </div>
             </div>
@@ -810,14 +562,14 @@
         <div class="contact-wrapper">
             <div class="contact-info">
                 <div class="section-label">Contattaci</div>
-                <h2>Devi assumere? <span class="accent">Parliamone.</span></h2>
+                <h2>Stai cercando <span class="accent">personale?</span></h2>
                 <p class="subtitle">Compila il form e ti ricontattiamo entro 24 ore per una call conoscitiva, senza impegno.</p>
 
                 <ul class="contact-perks">
-                    <li><span class="perk-dot"></span> Call gratuita e senza impegno</li>
-                    <li><span class="perk-dot"></span> Proposta personalizzata in 48h</li>
-                    <li><span class="perk-dot"></span> Nessun vincolo contrattuale</li>
-                    <li><span class="perk-dot"></span> Camp attivabile in 3-4 settimane</li>
+                    <li><span class="dot"></span> Call conoscitiva senza impegno</li>
+                    <li><span class="dot"></span> Proposta personalizzata in 48h</li>
+                    <li><span class="dot"></span> Nessun vincolo contrattuale</li>
+                    <li><span class="dot"></span> Camp attivabile in 3-4 settimane</li>
                 </ul>
             </div>
 
@@ -847,37 +599,32 @@
                             <option value="">Seleziona...</option>
                             <option value="tecnico">Tecnico / Ingegneristico</option>
                             <option value="marketing">Marketing / Comunicazione</option>
-                            <option value="admin">Amministrativo / Segreteria</option>
+                            <option value="admin">Amministrativo / Operativo</option>
                             <option value="altro">Altro</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="messaggio">Note (opzionale)</label>
-                        <textarea id="messaggio" name="messaggio" placeholder="Raccontaci brevemente cosa cerchi..."></textarea>
+                        <textarea id="messaggio" name="messaggio" placeholder="Descrivi brevemente il profilo che cerchi..."></textarea>
                     </div>
-                    <button type="submit" class="btn-primary form-submit">Richiedi una call gratuita</button>
-                    <p class="form-note">I tuoi dati sono al sicuro. Ti ricontattiamo entro 24h lavorative.</p>
+                    <button type="submit" class="btn-primary form-submit">Richiedi una call</button>
+                    <p class="form-note">Ti ricontattiamo entro 24h lavorative.</p>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="logo">GREENHUB <span>CAMP</span></div>
         <div>&copy; 2026 Green Hub. Tutti i diritti riservati.</div>
     </footer>
 
-    <!-- SCROLL ANIMATION -->
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     </script>
 
